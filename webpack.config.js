@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/app/app.js',
@@ -18,17 +18,18 @@ module.exports = {
             },
             {
             	test: /\.css$/,
-            	loader: ExtractTextPlugin.extract('style-loader','css-loader')
+                loader: 'style-loader!css-loader'
+
         	},
         	{
             	test: /\.(png|jpg)$/,
             	loader: 'url-loader'
-        	}
+            },
         ]
     },
-    // plugins: [
-    //     new ExtractTextPlugin('[name].css')
-    // ],
+    plugins: [
+        // new ExtractTextPlugin('[name].css')
+    ],
     devServer: {
         port: 8080,
         host: '0.0.0.0',

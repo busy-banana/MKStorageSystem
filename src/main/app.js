@@ -14,9 +14,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'src')));
-// app.use(express.static(path.join(__dirname, 'build')));
-
+app.use(express.static(path.join(__dirname,'../../src/app')));
+app.use(express.static(path.join(__dirname,'../../dist')));
 // app.post('/api/getMemberList',memberInfo.getMemberList);
 app.listen(3000);
 console.log('Node Server is running..');

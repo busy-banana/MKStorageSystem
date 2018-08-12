@@ -5,16 +5,11 @@ export default class AppContainer extends React.Component {
         super(props);
     }
 
-    goHome() {
-        console.log(this.context)
-        this.context.router.history.push('/home')
-    }
-
     render() {
+        const style = {width: '100%',height: '100%'};
         return (
-            <div onClick={this.goHome}>
-                AppContainer~
-
+            <div style={style}>
+                {this.props.children}
             </div>
         )
     }
