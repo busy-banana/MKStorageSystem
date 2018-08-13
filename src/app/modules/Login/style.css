@@ -1,6 +1,6 @@
 .login-container {
     height: 100%;
-    /* background-color: red; */
+    background: linear-gradient(#fff,#fee166 60%,#fee166);
 }
 
 .login-logo img{
@@ -33,6 +33,11 @@
     font-size: 1.1rem;
     color: #d40511;
     position: fixed;
-    bottom: 6rem;
+    bottom: 3rem;
     text-align: center;
+}
+
+.active-login-btn {
+    background-color: #fff;
+    color: #d40511;
 }

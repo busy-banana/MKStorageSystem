@@ -1,8 +1,13 @@
 import React from 'react';
+import { Toast } from 'antd-mobile';
 
 export default class AppContainer extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    showToast(content) {
+        Toast.info(content, 1.5);
     }
 
     render() {
