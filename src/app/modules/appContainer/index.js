@@ -1,5 +1,6 @@
 import React from 'react';
 import { Toast } from 'antd-mobile';
+import { hashHistory } from 'react-router';
 
 export default class AppContainer extends React.Component {
     constructor(props) {
@@ -11,13 +12,16 @@ export default class AppContainer extends React.Component {
     }
 
     //页面跳转-前进
-    forward(path) {
-        this.props.router.push(path);
+    forward(path, params) {
+        // if (params && typeof(params) == 'object') {
+        //     path = Object.assign(path, params)
+        // }
+        hashHistory.push(path);
     }
 
     //页面跳转-后退
-    back(path) {
-
+    back() {
+        hashHistory.goBack();
     }
 
     render() {

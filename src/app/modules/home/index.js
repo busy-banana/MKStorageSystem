@@ -6,6 +6,16 @@ import './style.css';
 export default class Home extends AppContainer {
     constructor(props) {
         super(props);
+
+
+        ['goGCDH',
+        ].forEach((method) => {
+            this[method] = this[method].bind(this);
+        });
+    }
+
+    goGCDH() {
+        this.forward('factoryProductArrive');
     }
 
     render() {
@@ -17,7 +27,7 @@ export default class Home extends AppContainer {
                 <p className="home-list-tips">请选择收货入库流程</p>
                 <List>
                     <Item
-                        onClick={() => {}}
+                        onClick={this.goGCDH}
                         className="home-list-item"
                         arrow="horizontal"
                     >

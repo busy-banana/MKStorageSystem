@@ -5,6 +5,7 @@ import AppContainer from './modules/AppContainer';
 import Home from './modules/Home';
 import Login from './modules/Login';
 import ScanPage from './modules/ScanPage';
+import FactoryProductArrive from './modules/FactoryProductArrive';
 import './style.css';
 
 const start = () => {
@@ -15,6 +16,7 @@ const start = () => {
                 <Route path="/home" components={Home}/>
                 <Route path="/login" components={Login}/>
                 <Route path="/scanPage" components={ScanPage}/>
+                <Route path="/factoryProductArrive" components={FactoryProductArrive}/>
             </Route>
         </Router>
         , document.getElementById('app')

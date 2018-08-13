@@ -1,14 +1,21 @@
 import React from 'react';
 import { NavBar, Icon } from 'antd-mobile';
+import AppContainer from '../../modules/AppContainer';
 import './style.css';
 
-export default class NavBars extends React.Component {
+export default class NavBars extends AppContainer {
     constructor(props) {
         super(props);
+
+        ['onLeftClick',
+            'onRightClick'
+        ].forEach((method) => {
+            this[method] = this[method].bind(this);
+        });
     }
 
     onLeftClick() {
-        console.log('onLeftClick')
+        this.back();
     }
 
     onRightClick() {
