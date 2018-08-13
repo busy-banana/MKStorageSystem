@@ -1,0 +1,33 @@
+.home-container {
+    height: 100%;
+    /* background: linear-gradient(#fee166,#eee 70%,#fee166); */
+}
+
+.home-title {
+    font-size: 1.8rem;
+    color: #d40511;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(#fc0,#fc0 30%,#fff0b3);
+    font-weight: bold;
+}
+
+.home-list-item {
+    
+    /* background-color: rgba(255,204,0); */
+
+}
+
+.home-list-text {
+    color: #3c3c3c;
+    height: 3rem;
+    line-height: 3rem;
+    padding-left: 1.8rem;
+}
+
+.home-list-tips {
+    color: #3c3c3c;
+    text-align: center;
+    opacity: 0.8;
+    margin: 3rem 0 1rem;
+}

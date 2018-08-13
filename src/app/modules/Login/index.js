@@ -26,6 +26,12 @@ export default class Login extends AppContainer {
             this.showToast('用户名不能为空');
         } else if (!this.state.password) {
             this.showToast('密码不能为空');
+        } else if (this.state.userName != 'admin') {
+            this.showToast('用户名不存在');
+        } else if (this.state.password != '123456') {
+            this.showToast('密码错误');            
+        } else {
+            this.forward('home');
         }
     }
 

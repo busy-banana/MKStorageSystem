@@ -10,6 +10,16 @@ export default class AppContainer extends React.Component {
         Toast.info(content, 1.5);
     }
 
+    //页面跳转-前进
+    forward(path) {
+        this.props.router.push(path);
+    }
+
+    //页面跳转-后退
+    back(path) {
+
+    }
+
     render() {
         const style = {width: '100%',height: '100%'};
         return (
