@@ -31,8 +31,8 @@ export default class NavBars extends AppContainer {
             <div>
                 <NavBar
                     className="navbar"
-                    icon={<Icon type="left" size="lg"/>}
-                    rightContent={<Icon type="ellipsis" size="lg" onClick={this.onRightClick}/>}
+                    icon={<Icon type="left" size="md"/>}
+                    rightContent={<Icon type="ellipsis" size="md" onClick={this.onRightClick}/>}
                     onLeftClick={this.onLeftClick}
                 >
                 {title}

@@ -80,7 +80,7 @@ export default class Login extends AppContainer {
                 >
                     登录
                 </Button>
-                <p className="login-tips">登陆遇到问题</p>
+                <p className="login-tips">登录遇到问题</p>
             </div>
         )
     }
