@@ -23,7 +23,7 @@ export default class FactoryProductArrive extends AppContainer {
         const Item = List.Item;
         const Brief = Item.Brief;
         const ASNScanResult = '0/10';
-        const PalletLPNList = '';
+        const PalletLPNList = 'PalletLPN列表';
     
         return (
             <div className="productArrive-container">
