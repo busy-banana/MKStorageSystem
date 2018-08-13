@@ -23,7 +23,8 @@ export default class FactoryProductArrive extends AppContainer {
         const Item = List.Item;
         const Brief = Item.Brief;
         const ASNScanResult = '0/10';
-
+        const PalletLPNList = '';
+    
         return (
             <div className="productArrive-container">
                 <NavBars title="工厂成品到货" />
@@ -34,6 +35,7 @@ export default class FactoryProductArrive extends AppContainer {
                     </Item>
                 </List>
                 <p className="productArrive-list-title">PalletLPN列表</p>
+
                 {PalletLPNList}
 
             </div>
