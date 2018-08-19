@@ -1,0 +1,26 @@
+.scanner {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+audio, video, canvas.drawing, canvas.drawingBuffer{
+    width: 20rem;
+    position: absolute;
+    top: 8rem;
+}
+
+.full-screen-shadow {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+}
+
+.scanner-container {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 auto;
+    position: relative
+}
+

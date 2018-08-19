@@ -8,7 +8,6 @@ export default class AppContainer extends React.Component {
 
         ['forward',
             'showToast',
-            'forward',
             'onBack',
         ].forEach((method) => {
             this[method] = this[method].bind(this);
@@ -16,7 +15,7 @@ export default class AppContainer extends React.Component {
     }
 
     showToast(content) {
-        Toast.info(content, 1.5);
+        Toast.info(content, 2);
     }
 
     //页面跳转-前进
@@ -25,8 +24,6 @@ export default class AppContainer extends React.Component {
         //     path = Object.assign(path, params)
         // }
         hashHistory.push(path);
-        // console.log(this.context)
-        // this.context.router.push(path)
     }
 
     //页面跳转-后退
