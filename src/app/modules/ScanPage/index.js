@@ -80,15 +80,17 @@ export default class ScanPage extends AppContainer {
                 // }
             }
         }
-        
-        if (navigator.getUserMedia || (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
+        if (navigator.getUserMedia
+             || navigator.webkitGetUserMedia
+             || navigator.mozGetUserMedia
+             || (navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) {
             const that = this;
             Quagga.init(state, (err) => {
                 if (err) {
-                    console.log(err);
+                    alert(err);
                     return
                 }
-                console.log("Initialization finished. Ready to start");
+                alert("Initialization finished. Ready to start");
                 Quagga.start();
 
                 // Set flag to is running
