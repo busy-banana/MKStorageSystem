@@ -9,8 +9,8 @@ export default class Login extends AppContainer {
         super(props);
 
         this.state = {
-            userName: '',
-            password: '',
+            userName: 'admin',
+            password: '123456',
         };
         
         ['clickLoginBtn',
@@ -22,20 +22,17 @@ export default class Login extends AppContainer {
     }
 
     clickLoginBtn() {
-        // if (!this.state.userName) {
-        //     this.showToast('用户名不能为空');
-        // } else if (!this.state.password) {
-        //     this.showToast('密码不能为空');
-        // } else if (this.state.userName != 'admin') {
-        //     this.showToast('用户名不存在');
-        // } else if (this.state.password != '123456') {
-        //     this.showToast('密码错误');            
-        // } else {
-        //     this.forward('home');
-        // }
-
-        this.forward('home');
-
+        if (!this.state.userName) {
+            this.showToast('用户名不能为空');
+        } else if (!this.state.password) {
+            this.showToast('密码不能为空');
+        } else if (this.state.userName != 'admin') {
+            this.showToast('用户名不存在');
+        } else if (this.state.password != '123456') {
+            this.showToast('密码错误');            
+        } else {
+            this.forward('home');
+        }
     }
 
     onChangeUserName(value) {
@@ -60,7 +57,8 @@ export default class Login extends AppContainer {
                 </div>
                 <p className="login-title">RFID收货管理系统</p>
                 <InputItem 
-                    placeholder="请输入用户名"
+                    // placeholder="请输入用户名"
+                    placeholder="admin"
                     className="login-input"
                     onChange={this.onChangeUserName}
                     clear={true}
@@ -68,7 +66,8 @@ export default class Login extends AppContainer {
                     用户名
                 </InputItem>
                 <InputItem
-                    placeholder="请输入密码"
+                    // placeholder="请输入密码"
+                    placeholder="******"
                     type="password"
                     className="login-input"
                     onChange={this.onChangePwd}
