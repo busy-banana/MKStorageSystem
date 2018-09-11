@@ -5,7 +5,7 @@ import AppContainer from '../../modules/AppContainer';
 import './style.css';
 const Item = List.Item;
 const Brief = Item.Brief;
-const Alert = Modal.Alert;
+const Alert = Modal.alert;
 
 export default class FactoryProductArrive extends AppContainer {
     constructor(props) {
@@ -16,17 +16,35 @@ export default class FactoryProductArrive extends AppContainer {
         };
         
         ['clickLPNListItem',
+            'deleteLPNCode',
         ].forEach((method) => {
             this[method] = this[method].bind(this);
         });
     }
 
+    //点击LPN列表回调
     clickLPNListItem(item) {
-        Alert('Much Buttons', <div>More than two buttons</div>, [
-            { text: 'Button1', onPress: () => console.log('第0个按钮被点击了') },
-            { text: 'Button2', onPress: () => console.log('第1个按钮被点击了') },
-            { text: 'Button3', onPress: () => console.log('第2个按钮被点击了') },
-        ])
+        Alert(
+            '是否删除LPN码', item, 
+            [
+                { text: '取消', onPress: () => {} },
+                { text: '确认', onPress: () => this.deleteLPNCode(item) }
+            ]
+        )
+    }
+
+    //删除一行LPN码
+    deleteLPNCode(LPNCode) {
+        const {
+            scanedLPNCode
+        } = this.state;
+        scanedLPNCode.map((item, index) => {
+            if(item == LPNCode){
+                scanedLPNCode.splice(index,1);
+                return
+            }
+        });
+        this.setState({scanedLPNCode})
     }
 
     //生成LPN列表
@@ -49,6 +67,9 @@ export default class FactoryProductArrive extends AppContainer {
     }
 
     render() {
+        const {
+            scanedLPNCode
+        } = this.state;
         
         const LPNListDOM = this.getLPNList();
 
@@ -65,6 +86,14 @@ export default class FactoryProductArrive extends AppContainer {
 
                 {LPNListDOM}
 
+                <Button
+                    className="bottom-btn"
+                    // activeClassName="active-login-btn"
+                    onClick={this.clickLoginBtn}
+                    disabled={scanedLPNCode.length ? false : true}
+                >
+                    收货入库
+                </Button>
             </div>
         )
     }
